@@ -131,7 +131,7 @@ Können Sie es so modifizieren, dass alle geraden Zahlen ausgegeben werden?
 
 
 <p align="center">
-<img src="while2.png" alt="While-Schleife-Beispiel" width="25%">
+<img src="while2.png" alt="While-Schleife-Beispiel" style="width: 100%; max-width: 250px; height: auto;">
 </p>
 
 Können Sie obiges Bild als Code darstellen?
