@@ -106,7 +106,7 @@ Im Rahmen der Unterlagen für den Landeslehrpreis wird hier beispielhaft das Kap
 Die while-Schleife wird verwendet, um einen Codeblock wiederholt auszuführen, solange eine bestimmte Bedingung erfüllt ist. Die Bedingung wird vor jeder Ausführung des Codeblocks überprüft und muss ein boolescher Ausdruck sein. Der Ablauf ist in folgendem Bild dargestellt.
 
 <p align="center">
-<img src="while1.png" alt="While-Schleife" width="20%">
+<img src="while1.png" alt="While-Schleife" style="width: 100%; max-width: 200px; height: auto;">
 </p>
 
 
