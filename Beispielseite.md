@@ -108,7 +108,13 @@ Die while-Schleife wird verwendet, um einen Codeblock wiederholt auszuführen, s
 </p>
 
 
+Die while-Schleife hat folgende Syntax:
 
+```
+while (Bedingung){
+  Anweisung;
+} 
+```
 
 Schauen Sie sich nun folgendes Codebeispiel an an. Was passiert hier?
 
@@ -178,6 +184,67 @@ Welche der folgenden Deklarationen ist eine gültige while-Schleife in Java?
 [( )] `while (i < 10) System.out.println(i); i++; end;`
 
 
+### Die do-while-Schleife
+Die do-while-Schleife ist eine Schleife mit Test der Bedingung am Ende des Schleifenkörpers. Das bedeutet, die Schleife wird mindestens einmal durchlaufen. Der Ablauf ist in folgendem Bild dargestellt.
+
+<p align="center">
+<img src="dowhile.png" alt="Do-While-Schleife" style="width: 100%; max-width: 180px; height: auto;">
+</p>
+
+
+Die Schleife wird solange durchlaufen, solange die Bedingung wahr ist. Wie immer muss die Bedingung ein boolescher Ausdruck sein. Weiterhin muss die Anweisung die Bedingung ändern, sonst erhält man eine Endlosschleife.
+
+Die do-while-Schleife hat folgende Syntax:
+
+```
+do {
+  Anweisung;
+} while (Bedingung);
+```
+
+Schauen wir uns ein längeres Beispiel an. Welche Ausgabe erzeugt folgendes Beispiel?
+
+```java
+class DoWhileBeispiel{
+    public static void main(String args[]){
+        int z = 0;
+        do {
+            System.out.println("Ausgabe ist: " + z);
+            z = z+1;
+        } while (z<5);
+
+        System.out.println("-------------------");
+        System.out.println("Zu Ende ist bei: " + z);     
+    }
+}
+```
+@LIA.java(DoWhileBeispiel)
+
+Führen Sie das Beispiel aus. Lagen Sie mit Ihrer Vermutung richtig?
+
+Modifizieren Sie das Beispiel nun so, dass die Ausgabe wie folgt ist:
+
+```
+Ausgabe ist: 1
+Ausgabe ist: 3
+-------------------
+Zu Ende ist bei: 5
+```
+
+>**Quiz** 
+
+Was unterscheidet eine do-while-Schleife von einer while-Schleife?
+
+[(x)] Die Bedingung wird nach dem Schleifenblock überprüft.
+[( )] Die Schleife wird immer nur einmal ausgeführt.
+[( )] Sie benötigt keine Bedingung, um ausgeführt zu werden.
+
+
+Welcher Codebaustein führt immer zu einer Endlosschleife bei Verwendung einer do-while-Schleife?
+
+[( )] while (i > 0);
+[( )] while (i < 10);
+[(x)] while (true);
 
 ### Beispiele
 
