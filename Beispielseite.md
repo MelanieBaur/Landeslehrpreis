@@ -52,9 +52,7 @@ Auf der rechten Seiten unterhalb des Codes, können Sie nun mit den Pfeilen zwis
 
 Um viel zu üben, denn das ist das wichtigste beim Programmieren, werden zu jedem Kapitel weitere Übungen bereit gestellt. Sie werden im Laufe des Buchs immer wieder zu diesen Übungen aufgefordert. Führen Sie die Aufgaben gewissenhaft aus. Bei Problemen fragen Sie einfach in der nächsten Mentoringstunde. 
 
->**Hinweis für die Jury des Landeslehrpreises:** 
-
-Als Ergänzung gibt es für die Studierenden eine Aufgabensammlung mit zahlreichen Aufgaben und Lösungen, welche diese über eine Webseite aufrufen können. Der Link hierzu wird am Anfang des Semester den Studierenden bekannt gegeben. Die Lösungen werden nach Bearbeitung der Aufgaben dann freigeschaltet.
+>**Hinweis für die Jury des Landeslehrpreises:** Als Ergänzung gibt es für die Studierenden eine Aufgabensammlung mit zahlreichen Aufgaben und Lösungen, welche diese über eine Webseite aufrufen können. Der Link hierzu wird am Anfang des Semester den Studierenden bekannt gegeben. Die Lösungen werden nach Bearbeitung der Aufgaben dann freigeschaltet.
 
 
 ## Kontrollfluss
@@ -97,17 +95,19 @@ Im Laufe dieses Kapitels schauen wir uns folgende Strukturen genauer an:
 * while-Schleife
 * do-while-Schleife
 
->**Hinweis für die Jury des Landeslehrpreises:** 
-
-Im Rahmen der Unterlagen für den Landeslehrpreis wird hier beispielhaft das Kapitel der while-Schleife ausgeführt und öffentlich zugänglich gemacht. Die kompletten Unterlagen des Stoffs für Programmieren 1 sind in diesem Stil ausgearbeitet und für die Studierenden zugänglich.
-
 
 ### Die while-Schleife
+
+>**Hinweis für die Jury des Landeslehrpreises:** Im Rahmen der Unterlagen für den Landeslehrpreis wird hier beispielhaft das Kapitel der while-Schleife ausgeführt und öffentlich zugänglich gemacht. Die kompletten Unterlagen des Stoffs für Programmieren 1 sind in diesem Stil ausgearbeitet und für die Studierenden zugänglich. 
+
+
 Die while-Schleife wird verwendet, um einen Codeblock wiederholt auszuführen, solange eine bestimmte Bedingung erfüllt ist. Die Bedingung wird vor jeder Ausführung des Codeblocks überprüft und muss ein boolescher Ausdruck sein. Der Ablauf ist in folgendem Bild dargestellt.
 
 <p align="center">
-<img src="while1.png" alt="While-Schleife" style="width: 100%; max-width: 200px; height: auto;">
+<img src="while1.png" alt="While-Schleife" style="width: 100%; max-width: 180px; height: auto;">
 </p>
+
+
 
 
 Schauen Sie sich nun folgendes Codebeispiel an an. Was passiert hier?
@@ -127,7 +127,7 @@ class While{
 
 Überprüfen Sie Ihre Vermutung, in dem Sie das Programm ausführen. 
 
-Können Sie es so modifizieren, dass alle geraden Zahlen ausgegeben werden?
+Können Sie es so modifizieren, dass nur die geraden Zahlen im relevanten Bereich ausgegeben werden?
 
 
 <p align="center">
@@ -146,7 +146,7 @@ class WhileBeispiel{
 ```
 @LIA.java(WhileBeispiel)
 
-Führen Sie Ihr Programm aus und vergleichen Sie es mit der Grafik. Haben Sie alles korrekt umgesetzt?
+Führen Sie Ihr Programm aus und vergleichen Sie es mit der Grafik. Haben Sie alles korrekt umgesetzt? Welches Ergebnis erhalten Sie?
 
 >**Anmerkungen**
 
@@ -194,7 +194,7 @@ public class AnwendungFor {
 ```
 @LIA.java(AnwendungFor)
 
-Überprüfen Sie Ihre Vermutung, in dem Sie das Programm ausführen.
+Überprüfen Sie Ihre Vermutung, indem Sie das Programm ausführen.
 
 Überlegen Sie danach, wie Sie obigen Code in eine äquivalente `while`-Schleife umbauen können.
 
