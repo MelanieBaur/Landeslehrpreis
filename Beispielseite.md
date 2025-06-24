@@ -57,6 +57,8 @@ Um viel zu üben, denn das ist das wichtigste beim Programmieren, werden zu jede
 
 ## Kontrollfluss
 
+>**Hinweis für die Jury des Landeslehrpreises:** Im Rahmen der Unterlagen für den Landeslehrpreis wird hier beispielhaft das Kapitel der while-Schleife ausgeführt und öffentlich zugänglich gemacht. Die kompletten Unterlagen des Stoffs für Programmieren 1 sind in diesem Stil ausgearbeitet und für die Studierenden zugänglich. 
+
 Der Kontrollfluss in Java ermöglicht es uns, den Ablauf unseres Codes zu steuern, indem wir Entscheidungen treffen, Verzweigungen und Schleifen verwenden. Kontrollflussstrukturen wie bedingte Anweisungen und Schleifen ermöglichen es uns, unseren Code dynamisch zu gestalten und verschiedene Pfade je nach Bedingungen oder Anforderungen auszuführen.
 
 Schauen Sie sich folgendes Beispiel an und überlegen Sie sich für jede Zeile, was das Programm tun könnte und welche Ausgabe der Code Ihrer Meinung nach erzeugt.
@@ -97,9 +99,6 @@ Im Laufe dieses Kapitels schauen wir uns folgende Strukturen genauer an:
 
 
 ### Die while-Schleife
-
->**Hinweis für die Jury des Landeslehrpreises:** Im Rahmen der Unterlagen für den Landeslehrpreis wird hier beispielhaft das Kapitel der while-Schleife ausgeführt und öffentlich zugänglich gemacht. Die kompletten Unterlagen des Stoffs für Programmieren 1 sind in diesem Stil ausgearbeitet und für die Studierenden zugänglich. 
-
 
 Die while-Schleife wird verwendet, um einen Codeblock wiederholt auszuführen, solange eine bestimmte Bedingung erfüllt ist. Die Bedingung wird vor jeder Ausführung des Codeblocks überprüft und muss ein boolescher Ausdruck sein. Der Ablauf ist in folgendem Bild dargestellt.
 
