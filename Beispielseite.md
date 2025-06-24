@@ -263,12 +263,12 @@ public class AnwendungFor {
 
 Überprüfen Sie Ihre Vermutung, indem Sie das Programm ausführen.
 
-Überlegen Sie danach, wie Sie obigen Code in eine äquivalente `while`-Schleife umbauen können.
+Überlegen Sie danach, wie Sie obigen Code in eine äquivalente `while`-Schleife umbauen können. 
 
 ```java
 public class Ueberlegung{
 	public static void main(String[] args) {
-    // hier können Sie die Schleifen ausprobieren
+    // hier können Sie die while-Schleife ausprobieren
     
 	}
 }
@@ -290,6 +290,36 @@ public class Anwendung1_While{
 ```
 @LIA.java(Anwendung1_While)
 
+Wie können Sie dieses Coding nun in eine `do-while`-Schleife umbauen?
+
+```java
+public class Ueberlegung2{
+	public static void main(String[] args) {
+    // hier können Sie die do-while Schleife ausprobieren
+
+    }	
+}
+```
+@LIA.java(Ueberlegung2)
+
+Funktioniert alles wie gedacht? Dann können Sie im folgenden eine mögliche Lösung für die `do-while`-Schleife sehen. 
+
+```java
+public class Anwendung3_DoWhile{
+	public static void main(String[] args) {
+        int i = 1;
+		boolean mindestensEinmal = true;
+
+		do {
+			if (mindestensEinmal == true) {
+				System.out.println("i = " + i);
+			}
+			i = i + 1;
+		} while (i < 4);
+    }	
+}
+```
+@LIA.java(Anwendung3_DoWhile)
 
 Nun schauen wir den Ersatz einer `if`-Bedingung durch eine `while`-Schleife an:
 
@@ -307,7 +337,7 @@ public class Anwendung1_If {
 
 Was macht dieses Programm? 
 
-Bauen Sie nun obiges Programm so um, dass das selbe Ergebnis herauskommt. Verwenden Sie nun ausschließlich eine `while`-Schleife. 
+Bauen Sie obiges Programm so um, dass das selbe Ergebnis herauskommt. Verwenden Sie nun ausschließlich eine `while`-Schleife. 
 
 ```java
 public class Ueberlegung2{
@@ -397,7 +427,7 @@ Weiterführende Aufgaben und die Lösungen zu obigen Aufgaben finden Sie in der 
 Wann wird welche Schleife verwendet?
 
 * while -> Anzahl Durchläufe ist zu Beginn unbekannt
+* do-while -> Anzahl Durchläufe ist zu Beginn unbekannt, aber ein Durchlauf ist mindestens notwendig
 * for -> Anzahl Durchläufe ist zu Beginn bekannt	
 * for each -> Zugriff auf die Elemente einer Menge
-* do-while -> Anzahl Durchläufe ist zu Beginn unbekannt, aber ein Durchlauf ist mindestens notwendig
 
