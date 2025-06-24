@@ -94,8 +94,8 @@ Im Laufe dieses Kapitels schauen wir uns folgende Strukturen genauer an:
 * switch/case-Statement
 * for-Schleife (Zählschleife)
 * for-each-Schleife (Mengenschleife)
-* while-Schleife
-* do-while-Schleife
+* **while-Schleife**
+* **do-while-Schleife**
 
 
 ### Die while-Schleife
