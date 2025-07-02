@@ -27,8 +27,8 @@ Die wichtigsten Informationen finden Sie aber alle in diesem Workbook. Dieses be
 Zum Beispiel ist das folgende ein Programm-Code, bei dem etwas auf der Konsole ausgegeben wird.
 
 ```java
-class HalloWelt{
-    public static void main(String args[]){
+class HalloWelt {
+    public static void main(String args[]) {
         System.out.println("Hallo Welt");
     }
 }
@@ -57,15 +57,16 @@ Um viel zu üben, denn das ist das wichtigste beim Programmieren, werden zu jede
 
 ## Kontrollfluss
 
->**Hinweis für die Jury des Landeslehrpreises:** Im Rahmen der Unterlagen für den Landeslehrpreis wird hier beispielhaft das Kapitel der while-Schleife ausgeführt und öffentlich zugänglich gemacht. Die kompletten Unterlagen des Stoffs für Programmieren 1 sind in diesem Stil ausgearbeitet und für die Studierenden zugänglich. 
+>**Hinweis für die Jury des Landeslehrpreises:** Im Rahmen der Unterlagen für den Landeslehrpreis wird hier beispielhaft das Kapitel der Schleifen ausgeführt und öffentlich zugänglich gemacht. Die kompletten Unterlagen des Stoffs für Programmieren 1 sind in diesem Stil ausgearbeitet und für die Studierenden zugänglich. 
+
 
 Der Kontrollfluss in Java ermöglicht es uns, den Ablauf unseres Codes zu steuern, indem wir Entscheidungen treffen, Verzweigungen und Schleifen verwenden. Kontrollflussstrukturen wie bedingte Anweisungen und Schleifen ermöglichen es uns, unseren Code dynamisch zu gestalten und verschiedene Pfade je nach Bedingungen oder Anforderungen auszuführen.
 
 Schauen Sie sich folgendes Beispiel an und überlegen Sie sich für jede Zeile, was das Programm tun könnte und welche Ausgabe der Code Ihrer Meinung nach erzeugt.
 
 ```java
-class DemoKontrollfluss{
-    public static void main(String args[]){
+class DemoKontrollfluss {
+    public static void main(String args[]) {
         int zahl = 10;
 
         if (zahl % 2 == 0) {
@@ -92,11 +93,225 @@ Im Laufe dieses Kapitels schauen wir uns folgende Strukturen genauer an:
 * if-Verzweigungen
 * if/else-Anweisungen
 * switch/case-Statement
-* for-Schleife (Zählschleife)
-* for-each-Schleife (Mengenschleife)
+* **for-Schleife (Zählschleife)**
+* **for-each-Schleife (Mengenschleife)**
 * **while-Schleife**
 * **do-while-Schleife**
 
+
+### Die for-Schleife
+
+Schleifen werden genutzt um einen Java-Block öfters zu wiederholen. Die erste Schleife, die wir hier erklären, ist die `for`-Schleife. In dieser Schleife wird der auszuführende Code im Schleifenkörper von einer Anfangszahl bis zu einer Endzahl mit einer vorgegebenen Schrittweite wiederholt. Schauen Sie hierzu folgendes Bild an. 
+
+
+<p align="center">
+<img src="forSchleife.png" alt="For-Schleife" style="width: 100%; max-width: 600px; height: auto;">
+</p>
+
+
+Die allgemeine Syntax für die `for`-Schleife lautet: 
+
+```
+for (Initialisierung; Bedingung; Aktualisierung) {
+  // Hier passiert dann irgendetwas 
+  // Diesen Block nennt man Schleifenkörper
+} 
+```
+
+Im Code sieht dies dann so aus: Was ist das Ergebnis?
+
+```java
+class ForSyntax {
+    public static void main(String args[]) {
+        for (int i = 0; i < 10; i++){
+          System.out.println(i);
+        }
+    }
+}
+```
+@LIA.java(Zaehlschleife)
+
+
+Was müssen Sie abändern, um auch die Zahl 10 ausgeben zu lassen?
+
+Betrachten Sie nun folgendes Beispiel: 
+
+```java
+class ForBeispiel {
+    public static void main(String args[]) {
+        int n = 4;
+        int fakultaet = 1;
+        for(int i = 1; i<=n; i++) {
+            fakultaet *= i;
+        }
+        System.out.println(n + "! = " + fakultaet);
+    }
+}
+```
+@LIA.java(ForBeispiel)
+
+Wie sieht hier die Ausgabe aus? 
+
+Können Sie obiges Programm so abändern, dass die Zahlensumme von 1 bis 5 berechnet wird? Die Lösung finden Sie untenstehend.
+
+```java
+class ForZahlensumme{
+    public static void main(String args[]){
+        int n = 5;
+        int summe = 0; // Bei 0 starten!
+        for(int i = 1; i<=n; i++) {
+            summe += i; // Aufsummieren statt multiplizieren
+        }
+        System.out.println("Zahlensumme: " + summe);
+    }
+}
+```
+@LIA.java(ForZahlensumme)
+
+>**Anmerkungen:**
+
+- Eine im Schleifenkopf deklarierte Variable ist nur innerhalb der Schleife sichtbar.
+- Teile des Kopfes können leer bleiben. Z.B. stellt for(;;) eine Endlosschleife dar. Es gibt keine Bedingung, die die Schleife stoppt. 
+- Man kann Schleifen auch schachteln. 
+- Das Schlüsselwor `break` verlässt die Schleife sofort.
+- Das Schlüsselwort `continue` überspringt den aktuellen Schleifendurchlauf und fährt mit dem nächsten Durchlauf fort
+
+
+>**Quiz:** 
+
+Welche der folgenden for-Schleifen zählt von 1 bis einschließlich 5?
+
+[( )]  for (int i = 0; i < = 5; i++)
+[(X)]  for (int i = 1; i < = 5; i++)
+[( )]  for (int i = 1; i < 5; i++)
+
+Was ist das Ergebnis dieser Schleife?
+
+```
+for (int i = 0; i < 3; i++) {
+    System.out.print(i + " ");
+}
+```
+
+[( )]  1 2 3
+[(X)]  0 1 2
+[( )]  0 1 2 3
+
+Welche Komponente einer for-Schleife ist nicht erforderlich, damit diese richtig kompiliert wird?
+
+[( )] Die Initialisierung
+[( )] Die Bedingung
+[(X)] Keine ist zwingend, alle Teile können weggelassen werden
+
+
+### Die for-each-Schleife
+
+Die `for-each`-Schleife benötigt eine Sammlung gleichartiger Objekte. Ein Array ist ein Beispiel hierfür. Auch im Kapitel `Collections` werden wird diese Art von Schleife ausgiebig nutzen. 
+
+Die `for-each`-Schleife führt den Rumpf für jedes Element der angegebenen Menge aus. Es ist somit nicht erforderlich einen Index oder die Größe des Arrays zu berücksichtigen. Dies hilft, Fehler zu vermeiden. 
+
+Die `for-each`-Schleife hat folgende Syntax:
+
+```
+for (Datentyp element : sammlung) {
+  // Hier passiert dann irgendetwas mit den Elementen der Sammlung 
+} 
+```
+
+Schauen Sie sich folgendes Beispiel für die `for-each`-Schleife an und überlegen Sie sich folgende Fragen:
+
+* Welchen Datentyp haben die Elemente, über die iteriert wird?
+* Wie sieht die "Sammlung" der Elemente aus?
+* Was könnte der Output dieses Codes sein?
+
+```java
+class ForEachSyntax {
+    public static void main(String args[]) {
+        String[] array = {"eins", "zwei", "drei"}; 
+        for (String wort : array) {
+            System.out.println(wort);
+        }
+    }
+}
+```
+@LIA.java(ForEachSyntax)
+
+Führen Sie nun den Code aus.
+
+In der "Sammlung" befinden sich die drei Strings "eins", "zwei", "drei". Alle Elemente der Sammlung werden ausgegeben. 
+
+Modifizieren Sie obigen Code so, dass auch die Wörter "null" und "vier" ausgegeben werden. 
+
+Erstellen Sie nun ein eigenes Beispiel, das die Zahlen 1, 2, 3 ausgibt, jeweils in einer neuen Zeile. Nutzen Sie hierfür ein integer-Array und die for-each-Schleife. 
+
+
+```java
+class ForEachUebung {
+    public static void main(String args[]) {
+        // Legen Sie zunächst ein integer-Array an: int[] ...
+
+        // Iterieren Sie dann mit Hilfe der for-each-Schleife über das Array
+        
+    }
+}
+```
+@LIA.java(LoesungForEForEachUebungachUebung)
+
+Hat alles geklappt? Dann finden Sie hier die Lösung:
+
+```java
+class LoesungForEachUebung {
+    public static void main(String args[]) {
+        int[] zahlen = {1,2,3}; 
+        for (int zahl : zahlen) {
+            System.out.println(zahl);
+        }
+    }
+}
+```
+@LIA.java(LoesungForEachUebung)
+
+
+>**Nutzung der for-each-Schleife:**
+
+Die for-each-Schleife kann genutzt werden, wenn:
+
+* Über alle Elemente einer Sammlung iteriert werden soll
+* Der Index des jeweiligen Elements nicht benötigt wird
+* Die Sammlung sich während der Iteration nicht verändert
+
+
+>**Erklärung für Fortgeschrittene, die bereits Collections kennen:**
+
+Intern wird bei der for-each-Schleife ein Iterator benutzt, welcher automatisch durch die Sammlung der gleichartigen Objekte zählt und die Schleife beendet, wenn alle Elemente durchlaufen sind. Somit kann eine for-each-Schleife nicht nur für Arrays, sondern für alle Klassen benutzt werden, die das Interface java.lang.Iterable implementieren. In der Java API Specification finden Sie hierzu weitere Details: [Java API](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html)
+
+>**Quiz:** 
+
+Welche der folgenden Schleifen ist eine gültige for-each-Schleife?
+
+[( )] for (int i = 0; i < array.length; i++)
+[(X)] for (int element : array)
+[( )] for (array : int element)
+
+
+Was ist eine typische Einschränkung der for-each-Schleife?
+
+[( )] Sie kann keine Arrays durchlaufen. 
+[( )] Sie kann nur über Listen iterieren.
+[(X)] Sie erlaubt keinen Zugriff auf den Index des Elements.
+
+Was berechnet die folgende Schleife?
+
+```
+int[] zahlen = {1, 2, 3};
+for (int zahl : zahlen) {
+    System.out.print(zahl + " ");
+}
+```
+
+[( )] Es wird „123“ ohne Leerzeichen ausgegeben.
+[(X)] Es wird „1 2 3 “ mit Leerzeichen ausgegeben.
+[( )] Es wird ein Fehler angezeigt, da for-each keine Arrays unterstützt.
 
 ### Die while-Schleife
 
@@ -110,7 +325,7 @@ Die while-Schleife wird verwendet, um einen Codeblock wiederholt auszuführen, s
 Die while-Schleife hat folgende Syntax:
 
 ```
-while (Bedingung){
+while (Bedingung) {
   Anweisung;
 } 
 ```
@@ -118,7 +333,7 @@ while (Bedingung){
 Schauen Sie sich nun folgendes Codebeispiel an an. Was passiert hier?
 
 ```java
-class While{
+class WhileSyntax {
     public static void main(String args[]){
         int zaehler = 15;
         while (zaehler < 20) {
@@ -128,7 +343,7 @@ class While{
     }
 }
 ```
-@LIA.java(While)
+@LIA.java(WhileSyntax)
 
 Überprüfen Sie Ihre Vermutung, in dem Sie das Programm ausführen. 
 
@@ -142,18 +357,18 @@ Können Sie es so modifizieren, dass nur die geraden Zahlen im relevanten Bereic
 Können Sie obiges Bild als Code darstellen?
 
 ```java
-class WhileBeispiel{
+class WhileBildAlsCode {
     public static void main(String args[]){
 
        
     }
 }
 ```
-@LIA.java(WhileBeispiel)
+@LIA.java(WhileBildAlsCode)
 
 Führen Sie Ihr Programm aus und vergleichen Sie es mit der Grafik. Haben Sie alles korrekt umgesetzt? Welches Ergebnis erhalten Sie?
 
->**Anmerkungen**
+>**Anmerkungen:**
 
 - Die Bedingung der `while`-Schleife wird vor der Ausführung des Codeblocks überprüft. Wenn die Bedingung falsch ist, wird der Codeblock nicht ausgeführt und die Schleife wird beendet.
 - Es ist wichtig, sicherzustellen, dass sich die Bedingung im Verlauf der Schleife ändert, um eine Endlosschleife zu vermeiden.
@@ -162,7 +377,7 @@ Führen Sie Ihr Programm aus und vergleichen Sie es mit der Grafik. Haben Sie al
 Die `while`-Schleife ist besonders nützlich, wenn die Anzahl der Iterationen im Voraus nicht bekannt ist, sondern von einer Bedingung abhängt.
 
 
->**Quiz** 
+>**Quiz:** 
 
 Was ist die Hauptfunktion einer while-Schleife in Java?
 
@@ -204,7 +419,7 @@ do {
 Schauen wir uns ein längeres Beispiel an. Welche Ausgabe erzeugt folgendes Beispiel?
 
 ```java
-class DoWhileBeispiel{
+class DoWhileSyntax {
     public static void main(String args[]){
         int z = 0;
         do {
@@ -217,7 +432,7 @@ class DoWhileBeispiel{
     }
 }
 ```
-@LIA.java(DoWhileBeispiel)
+@LIA.java(DoWhileSyntax)
 
 Führen Sie das Beispiel aus. Lagen Sie mit Ihrer Vermutung richtig?
 
@@ -250,7 +465,7 @@ Welcher Codebaustein führt immer zu einer Endlosschleife bei Verwendung einer d
 Machen Sie sich mit folgendem Coding vertraut und überlegen Sie, was die Ausgabe ist. 
 
 ```java
-public class AnwendungFor {
+class ForBeispiel {
 	public static void main(String[] args) {
 		for (int i = 1 ; i < 4 ; i = i + 1) {
 			System.out.println("i = " + i);
@@ -258,26 +473,26 @@ public class AnwendungFor {
 	}
 }
 ```
-@LIA.java(AnwendungFor)
+@LIA.java(ForBeispiel)
 
 Überprüfen Sie Ihre Vermutung, indem Sie das Programm ausführen.
 
 Überlegen Sie danach, wie Sie obigen Code in eine äquivalente `while`-Schleife umbauen können. 
 
 ```java
-public class Ueberlegung{
+class ForAlsWhileSchleife {
 	public static void main(String[] args) {
     // hier können Sie die while-Schleife ausprobieren
     
 	}
 }
 ```
-@LIA.java(Ueberlegung)
+@LIA.java(ForAlsWhileSchleife)
 
 Die Lösungen für die `while`-Schleife finden Sie hier:
 
 ```java
-public class Anwendung1_While{
+class LoesungForAlsWhileSchleife {
 	public static void main(String[] args) {
 		int i = 1;	
 		while (i < 4) {
@@ -287,24 +502,24 @@ public class Anwendung1_While{
 	}
 }
 ```
-@LIA.java(Anwendung1_While)
+@LIA.java(LoesungForAlsWhileSchleife)
 
 Wie können Sie dieses Coding nun in eine `do-while`-Schleife umbauen?
 
 ```java
-public class Ueberlegung2{
+class ForAlsDoWhileSchleife {
 	public static void main(String[] args) {
     // hier können Sie die do-while Schleife ausprobieren
 
-    }	
+  }	
 }
 ```
-@LIA.java(Ueberlegung2)
+@LIA.java(ForAlsDoWhileSchleife)
 
 Funktioniert alles wie gedacht? Dann können Sie im folgenden eine mögliche Lösung für die `do-while`-Schleife sehen. 
 
 ```java
-public class Anwendung3_DoWhile{
+class LoesungForAlsDoWhileSchleife {
 	public static void main(String[] args) {
         int i = 1;
 		boolean mindestensEinmal = true;
@@ -315,15 +530,15 @@ public class Anwendung3_DoWhile{
 			}
 			i = i + 1;
 		} while (i < 4);
-    }	
+  }
 }
 ```
-@LIA.java(Anwendung3_DoWhile)
+@LIA.java(LoesungForAlsDoWhileSchleife)
 
 Nun schauen wir den Ersatz einer `if`-Bedingung durch eine `while`-Schleife an:
 
 ```java
-public class Anwendung1_If {
+class IfOhneWhileSchleife {
 	public static void main(String[] args) {
 		int i = 3;
 		if (i < 18) {
@@ -332,28 +547,28 @@ public class Anwendung1_If {
 	}
 }
 ```
-@LIA.java(Anwendung1_If)
+@LIA.java(IfOhneWhileSchleife) 
 
 Was macht dieses Programm? 
 
 Bauen Sie obiges Programm so um, dass das selbe Ergebnis herauskommt. Verwenden Sie nun ausschließlich eine `while`-Schleife. 
 
 ```java
-public class Ueberlegung2{
+class IfAlsWhileSchleife {
 	public static void main(String[] args) {
     // hier können Sie die while-Schleife ausprobieren
 
     }	
 }
 ```
-@LIA.java(Ueberlegung2)
+@LIA.java(IfAlsWhileSchleife)
 
 Überprüfen Sie Ihr Programm. Stimmt es auch für verschiedene Eingaben von `i`?
 
 Hier finden Sie die Lösung:
 
 ```java
-public class Anwendung2_While{
+class LoesungIfAlsWhileSchleife {
 	public static void main(String[] args) {
 		int i = 3;
 		boolean nurEinmal = true;
@@ -365,7 +580,7 @@ public class Anwendung2_While{
 	}
 }
 ```
-@LIA.java(Anwendung2_While)
+@LIA.java(LoesungIfAlsWhileSchleife)
 
 Wenn Sie diese Beispiele verstanden haben, können Sie zu den Übungen weiter gehen.
 
@@ -425,8 +640,9 @@ Weiterführende Aufgaben und die Lösungen zu obigen Aufgaben finden Sie in der 
 
 Wann wird welche Schleife verwendet?
 
+* for -> Anzahl Durchläufe ist zu Beginn bekannt	
+* for each -> Iteration über alle Elemente einer Sammlung, die sich während der Iteration nicht ändert und der Index des aktuellen Elements wird nicht benötigt
 * while -> Anzahl Durchläufe ist zu Beginn unbekannt
 * do-while -> Anzahl Durchläufe ist zu Beginn unbekannt, aber ein Durchlauf ist mindestens notwendig
-* for -> Anzahl Durchläufe ist zu Beginn bekannt	
-* for each -> Zugriff auf die Elemente einer Menge
+
 
