@@ -319,7 +319,7 @@ class ForEachUebung {
     }
 }
 ```
-@LIA.java(LoesungForEForEachUebungachUebung)
+@LIA.java(ForEachUebung)
 
 Hat alles geklappt? Dann finden Sie hier die Lösung:
 
