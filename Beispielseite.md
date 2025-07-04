@@ -465,7 +465,7 @@ class WhileSyntax {
 ```
 @LIA.java(WhileSyntax)
 
-Überprüfen Sie Ihre Vermutung, in dem Sie das Programm ausführen. 
+Überprüfen Sie Ihre Vermutung, indem Sie das Programm ausführen. 
 
 Können Sie es so modifizieren, dass nur die geraden Zahlen im relevanten Bereich ausgegeben werden?
 
