@@ -131,7 +131,7 @@ class ForSyntax {
     }
 }
 ```
-@LIA.java(Zaehlschleife)
+@LIA.java(ForSyntax)
 
 
 Was müssen Sie abändern, um auch die Zahl 10 ausgeben zu lassen?
