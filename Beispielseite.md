@@ -1,7 +1,7 @@
 <!--
 author: Melanie Baur, Hochschule für Technik Stuttgart, contact: melanie.baur@hft-stuttgart.de
 language: de
-version: 0.1
+version: 1.0
 narrator: Deutsch Female
 mode: Textbook
 
@@ -88,7 +88,7 @@ Führen Sie nun den Code aus und überprüfen Sie Ihre Vermutung. Hatten Sie rec
 
 Modifizieren Sie den Code so, dass als Ausgabe "11 ist eine ungerade Zahl" erscheint, sowie die Zahlen von 0 bis 3 ausgegeben werden.
 
-Im Laufe dieses Kapitels schauen wir uns folgende Strukturen genauer an: 
+Im Laufe dieses Kapitels schauen wir uns folgende Strukturen, die im obigen Code schon vorkommen, genauer an, so dass Sie alle verstehen und einsetzen können: 
 
 * if-Verzweigungen
 * if/else-Anweisungen
@@ -97,6 +97,8 @@ Im Laufe dieses Kapitels schauen wir uns folgende Strukturen genauer an:
 * **for-each-Schleife (Mengenschleife)**
 * **while-Schleife**
 * **do-while-Schleife**
+
+Die **fett** gedruckten Unterkapitel sind dabei Teil des öffentlichen Workbooks.
 
 
 ### Die for-Schleife
@@ -176,7 +178,12 @@ class ForZahlensumme{
 - Das Schlüsselwor `break` verlässt die Schleife sofort.
 - Das Schlüsselwort `continue` überspringt den aktuellen Schleifendurchlauf und fährt mit dem nächsten Durchlauf fort
 
+Zähler modifizieren: 
 
+- Statt `zaehler=zaehler + 1` kann man auch `zaehler++` schreiben
+- Analog gibt es auch `zaehler–-`, dies entspricht `zaehler -= 1`
+- Sie können die Zähler auf jede beliebige Art und Weise modifizieren, z.B. `zaehler += 2`, `zaehler -= 5`, `zaehler *= i` etc.
+ 
 >**Quiz:** 
 
 Welche der folgenden for-Schleifen zählt von 1 bis einschließlich 5?
@@ -202,6 +209,63 @@ Welche Komponente einer for-Schleife ist nicht erforderlich, damit diese richtig
 [( )] Die Initialisierung
 [( )] Die Bedingung
 [(X)] Keine ist zwingend, alle Teile können weggelassen werden
+
+
+>**Übung:**
+
+Schreiben Sie ein Programm, dass alle geraden Zahlen von 20 bis 40 ausgibt. Nutzen Sie hierfür eine for-Schleife. Überlegen Sie sich dazu, wie Sie überprüfen können, ob eine Zahl gerade ist. 
+
+```java
+class GeradeZahlen {
+    public static void main(String args[]) {
+
+
+    }
+}
+```
+@LIA.java(GeradeZahlen)
+
+
+Schreiben Sie nun ein Programm, dass einen Countdown ausgibt. Dabei soll von 10 bis 1 rückwärts gezählt werden. Wenn der Countdown endet, soll die Nachricht `Start` ausgegeben werden.
+
+```java
+class Countdown {
+    public static void main(String args[]) {
+
+
+    }
+}
+```
+@LIA.java(Countdown)
+
+
+
+Hier können Sie Ihre Lösung von oben vergleichen:
+
+```java
+class LoesungGeradeZahlen {
+    public static void main(String args[]) {
+        for (int i = 20; i <= 40; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+```
+@LIA.java(LoesungGeradeZahlen)
+
+```java
+class LoesungCountdown {
+    public static void main(String args[]) {
+        for (int i = 10; i > 0; i--) {
+            System.out.println(i);
+        }
+        System.out.println("Start");
+    }
+}
+```
+@LIA.java(LoesungCountdown)
 
 
 ### Die for-each-Schleife
@@ -313,6 +377,62 @@ for (int zahl : zahlen) {
 [(X)] Es wird „1 2 3 “ mit Leerzeichen ausgegeben.
 [( )] Es wird ein Fehler angezeigt, da for-each keine Arrays unterstützt.
 
+
+>**Übung:**
+
+Gegeben ist folgender Programmcode. Schauen Sie sich zuerst an, welche Datenstruktur vorgegeben ist. 
+
+
+```java
+class Lieblingsessen {
+    public static void main(String args[]) {
+    String[][] lieblingsgerichte = {
+            {"Ada Lovelace", "Fish", "Mash", "Cawl"},
+            {"Joseph Weizenbaum", "Hühnchen", "Kartoffeln", "Karotten"},
+            {"Edsger Dijkstra", "Stamppot", "Kaasstengels", "Erwtensoep"}
+        };
+    }
+}
+```
+@LIA.java(Lieblingsessen)
+
+Bei den drei Personen handelt es sich um berühmte Informatiker. Versuchen Sie herauszufinden, für was diese berühmt geworden sind. 
+
+Ergänzen Sie den Code nun mit einer äußeren for-each-Schleife und einer inneren for-Schleife so, dass für jeden Informatiker die Lieblingsgerichte ausgegeben werden in der Form: 
+
+```
+Ada Lovelace: 
+- Fisch
+- Mash
+- Cawl
+```
+
+Untenstehend kommt die Lösung:
+
+```java
+class LoesungLieblingsessen {
+    public static void main(String args[]) {
+    String[][] lieblingsgerichte = {
+            {"Ada Lovelace", "Fish", "Mash", "Cawl"},
+            {"Joseph Weizenbaum", "Hühnchen", "Kartoffeln", "Karotten"},
+            {"Edsger Dijkstra", "Stamppot", "Kaasstengels", "Erwtensoep"}
+        };
+
+        for (String[] person : lieblingsgerichte) {
+            System.out.println(person[0] + ": ");
+            for (int i = 1; i < person.length; i++) {
+                System.out.println("- " + person[i]);
+            }
+            System.out.println();
+        }   
+    }
+}
+```
+@LIA.java(LoesungLieblingsessen)
+
+
+
+
 ### Die while-Schleife
 
 Die while-Schleife wird verwendet, um einen Codeblock wiederholt auszuführen, solange eine bestimmte Bedingung erfüllt ist. Die Bedingung wird vor jeder Ausführung des Codeblocks überprüft und muss ein boolescher Ausdruck sein. Der Ablauf ist in folgendem Bild dargestellt.
@@ -398,6 +518,44 @@ Welche der folgenden Deklarationen ist eine gültige while-Schleife in Java?
 [( )] `while (i < 10) System.out.println(i); i++; end;`
 
 
+>**Übung:**
+
+Gegeben sei eine Startzahl. Schreiben Sie ein Programm, das diese Zahl so lange durch 2 teilt, bis das Ergebnis kleiner 1 ist. Nutzen Sie hierfür eine while-Schleife und überlegen Sie sich, welchen Datentyp Sie für die Startzahl brauchen. Geben Sie den aktuellen Wert Ihrer Zahl bei jedem Schleifendurchlauf aus. Geben Sie ebenso aus, wie groß die Zahl am Ende ist. 
+
+Testen Sie dann Ihre Lösung mit verschiedenen Startzahlen. 
+
+```java
+class Zahlenteilen {
+    public static void main(String args[]){
+
+       
+    }
+}
+```
+@LIA.java(Zahlenteilen)
+
+Ergänzen Sie dann Ihr obiges Programm so, dass die Anzahl der Schleifen-Durchläufe, also wie oft die Zahl geteilt wurde, auf der Konsole ausgegeben wird. 
+
+
+```java
+class LoesungZahlenteilen {
+    public static void main(String args[]){
+        double startzahl = 100.0;
+        int anzahlDurchlauefe = 0;
+
+        while (startzahl >= 1.0) {
+            System.out.println("Aktueller Wert: " + startzahl);
+            startzahl = startzahl / 2;
+            anzahlDurchlauefe++;
+        }
+        System.out.println("Zahl am Schlus: " + startzahl);
+        System.out.println("Anzahl der Durchlauefe: " + anzahlDurchlauefe);      
+    }
+}
+```
+@LIA.java(LoesungZahlenteilen)
+
+
 ### Die do-while-Schleife
 Die do-while-Schleife ist eine Schleife mit Test der Bedingung am Ende des Schleifenkörpers. Das bedeutet, die Schleife wird mindestens einmal durchlaufen. Der Ablauf ist in folgendem Bild dargestellt.
 
@@ -460,7 +618,44 @@ Welcher Codebaustein führt immer zu einer Endlosschleife bei Verwendung einer d
 [( )] while (i < 10);
 [(x)] while (true);
 
+
+>**Übung:**
+
+Schreiben Sie mit Hilfe einer do-while-Schleife ein Programm, dass die Quadratzahlen bis zu einer vorgegeben Quadratzahl ausgibt. Testen Sie Ihr Programm mit verschiedenen Eingaben.
+
+```java
+class Quadratzahlen {
+	public static void main(String[] args) {
+
+	}
+}
+```
+@LIA.java(class Quadratzahlen)
+
+
+```java
+class LoesungQuadratzahlen {
+	public static void main(String[] args) {
+        int hoechsteQuadratzahl = 25;
+        int startzahl = 1;
+        int quadrat = 0;
+        do {
+            quadrat = startzahl * startzahl;
+            System.out.println(quadrat); 
+            startzahl++;
+        } while (quadrat < hoechsteQuadratzahl);
+         // Durch das zusätzliche Einfügen folgender beiden Zeilen, 
+         // können Sie das Programm etwas besser nachvollziehen
+         System.out.println("Quadrat am Ende: " + quadrat); 
+         System.out.println("Startzahl am Ende: " + startzahl); 
+	}
+}
+```
+@LIA.java(LoesungQuadratzahlen)
+
 ### Beispiele
+
+In diesem Abschnitt finden Sie nun weitere Beispiele und kleine Übungen für die bisher eingeführten Schleifen. 
 
 Machen Sie sich mit folgendem Coding vertraut und überlegen Sie, was die Ausgabe ist. 
 
@@ -586,6 +781,10 @@ Wenn Sie diese Beispiele verstanden haben, können Sie zu den Übungen weiter ge
 
 ### Übungen
 
+Die Übungen in diesem Kapitel erledigen Sie bitte mit Ihrer IDE. Zunächst finden Sie hier drei einfachere Übungen, die Sie auf jeden Fall beherrschen sollten. Die Lösungen hierzu finden Sie in der Aufgaben-Datenbank. 
+Erledigen Sie danach alle weiteren Aufgaben aus der Aufgaben-Datenbank aus Kapitel 3. Die Aufgaben sind in der Datenbank nach Schwierigkeitsgrad sortiert. 
+
+
 **Zahlensumme**  
 
 Berechnen Sie die Summe aller Zahlen von 0 bis zu einer vorgegebenen größten Zahl. Für das Beispiel 5 wäre das also 0+1+2+3+4+5 = 15.
@@ -615,6 +814,7 @@ In dieser Aufgabe sollen alle vierstelligen PINs einer Bankkarte erzeugt und in 
 Schreiben Sie dazu ein Programm, das diese Aufgabe umsetzt. 
 
 Tipp:
+
 * Prüfen Sie zunächst, ob die Zahl ein-, zwei-, oder dreistellig ist, und fügen Sie ggf. voranstehende Nullen hinzu.
 
 Die Ausgabe sollte wie folgt aussehen:
@@ -630,10 +830,6 @@ Die Ausgabe sollte wie folgt aussehen:
 9998
 9999
 ```
-
->**Weitere Aufgaben:**  
-
-Weiterführende Aufgaben und die Lösungen zu obigen Aufgaben finden Sie in der Aufgaben-Datenbank in Kapitel 2. 
 
 
 ### Ablage 
