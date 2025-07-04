@@ -188,9 +188,9 @@ Zähler modifizieren:
 
 Welche der folgenden for-Schleifen zählt von 1 bis einschließlich 5?
 
-[( )]  for (int i = 0; i < = 5; i++)
-[(X)]  for (int i = 1; i < = 5; i++)
-[( )]  for (int i = 1; i < 5; i++)
+[( )]  `for (int i = 0; i < = 5; i++)`
+[(X)]  `for (int i = 1; i < = 5; i++)`
+[( )]  `for (int i = 1; i < 5; i++)`
 
 Was ist das Ergebnis dieser Schleife?
 
@@ -353,9 +353,9 @@ Intern wird bei der for-each-Schleife ein Iterator benutzt, welcher automatisch 
 
 Welche der folgenden Schleifen ist eine gültige for-each-Schleife?
 
-[( )] for (int i = 0; i < array.length; i++)
-[(X)] for (int element : array)
-[( )] for (array : int element)
+[( )] `for (int i = 0; i < array.length; i++)`
+[(X)] `for (int element : array)`
+[( )] `for (array : int element)`
 
 
 Was ist eine typische Einschränkung der for-each-Schleife?
@@ -435,7 +435,7 @@ class LoesungLieblingsessen {
 
 ### Die while-Schleife
 
-Die while-Schleife wird verwendet, um einen Codeblock wiederholt auszuführen, solange eine bestimmte Bedingung erfüllt ist. Die Bedingung wird vor jeder Ausführung des Codeblocks überprüft und muss ein boolescher Ausdruck sein. Der Ablauf ist in folgendem Bild dargestellt.
+Die `while`-Schleife wird verwendet, um einen Codeblock wiederholt auszuführen, solange eine bestimmte Bedingung erfüllt ist. Die Bedingung wird vor jeder Ausführung des Codeblocks überprüft und muss ein boolescher Ausdruck sein. Der Ablauf ist in folgendem Bild dargestellt.
 
 <p align="center">
 <img src="while1.png" alt="While-Schleife" style="width: 100%; max-width: 180px; height: auto;">
@@ -557,7 +557,7 @@ class LoesungZahlenteilen {
 
 
 ### Die do-while-Schleife
-Die do-while-Schleife ist eine Schleife mit Test der Bedingung am Ende des Schleifenkörpers. Das bedeutet, die Schleife wird mindestens einmal durchlaufen. Der Ablauf ist in folgendem Bild dargestellt.
+Die `do-while`-Schleife ist eine Schleife mit Test der Bedingung am Ende des Schleifenkörpers. Das bedeutet, die Schleife wird mindestens einmal durchlaufen. Der Ablauf ist in folgendem Bild dargestellt.
 
 <p align="center">
 <img src="dowhile.png" alt="Do-While-Schleife" style="width: 100%; max-width: 180px; height: auto;">
@@ -605,23 +605,23 @@ Zu Ende ist bei: 5
 
 >**Quiz** 
 
-Was unterscheidet eine do-while-Schleife von einer while-Schleife?
+Was unterscheidet eine `do-while`-Schleife von einer `while`-Schleife?
 
 [(x)] Die Bedingung wird nach dem Schleifenblock überprüft.
 [( )] Die Schleife wird immer nur einmal ausgeführt.
 [( )] Sie benötigt keine Bedingung, um ausgeführt zu werden.
 
 
-Welcher Codebaustein führt immer zu einer Endlosschleife bei Verwendung einer do-while-Schleife?
+Welcher Codebaustein führt immer zu einer Endlosschleife bei Verwendung einer `do-while`-Schleife?
 
-[( )] while (i > 0);
-[( )] while (i < 10);
-[(x)] while (true);
+[( )] `while (i > 0);`
+[( )] `while (i < 10);`
+[(x)] `while (true);`
 
 
 >**Übung:**
 
-Schreiben Sie mit Hilfe einer do-while-Schleife ein Programm, dass die Quadratzahlen bis zu einer vorgegeben Quadratzahl ausgibt. Testen Sie Ihr Programm mit verschiedenen Eingaben.
+Schreiben Sie mit Hilfe einer `do-while`-Schleife ein Programm, dass die Quadratzahlen bis zu einer vorgegeben Quadratzahl ausgibt. Testen Sie Ihr Programm mit verschiedenen Eingaben.
 
 ```java
 class Quadratzahlen {
@@ -630,7 +630,7 @@ class Quadratzahlen {
 	}
 }
 ```
-@LIA.java(class Quadratzahlen)
+@LIA.java(Quadratzahlen)
 
 
 ```java
